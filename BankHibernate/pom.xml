@@ -14,7 +14,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>3.6.10.Final</version>
+            <version>5.4.3.Final</version>
         </dependency> 
         <!-- Hibernate Logging dependency -->
         <dependency>
@@ -25,7 +25,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>3.6.10.Final</version>
+            <version>5.4.3.Final</version>
         </dependency>
         <!-- Level 2 Cache Dependency -->
         <dependency>

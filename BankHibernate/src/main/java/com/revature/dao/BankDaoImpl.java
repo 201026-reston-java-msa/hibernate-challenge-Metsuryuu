@@ -174,4 +174,23 @@ public static void main(String[] args) {
 	System.out.println(bankUsers);
 }
 
+	@Override
+	public void createAccount(BankAccount account) {
+		
+		Session session = HibernateConnectionUtil.getSession();
+		
+		//About to do a change to the database? start a transaction
+		Transaction tx = session.beginTransaction();
+		
+		//save - insert/create NOT update
+		session.save(account); //the user pojo is now in the persistent state after this line of execution
+		
+		//commit
+		tx.commit();
+		
+		session.close(); //now the user pojo has lost the connection and is considered detached
+		System.out.println(account);
+		
+	}
+
 }

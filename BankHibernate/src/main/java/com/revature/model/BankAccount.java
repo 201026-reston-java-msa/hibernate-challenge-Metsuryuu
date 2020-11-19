@@ -2,6 +2,8 @@ package com.revature.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,6 +14,7 @@ import javax.persistence.Table;
 public class BankAccount {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO, generator="bank_account_seq")
 	@Column(name="BA_ID")
 	private int baNumber;
 	
@@ -27,6 +30,13 @@ public class BankAccount {
 	@ManyToOne
 	@JoinColumn(name="U_ID")
 	private BankUser bankUser;	
+	
+	public BankAccount(double baBalance, BankUser bankUser) {
+		super();
+		this.baBalance = baBalance;
+		this.bankUser = bankUser;
+	}
+
 	/*
 	 * 	2 types of fetching: Eager and Lazy
 	 * 		By default, a single object is eagerly fetched

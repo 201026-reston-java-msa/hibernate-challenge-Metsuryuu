@@ -12,6 +12,7 @@ public interface Dao {
 	 */
 	//CREATE
 	public void createUser(BankUser user);
+	public void createAccount(BankAccount account);
 	
 	//READ
 	public BankUser getBankUserById(BankUser user);

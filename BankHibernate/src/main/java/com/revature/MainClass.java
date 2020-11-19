@@ -29,6 +29,7 @@ public class MainClass {
 		// to persist objects to your database.
 		//----------------------------------------------------------
 		
+		hibernateCreateExample();
 //		hibernateReadExample();
 //		hibernateReadAccount();
 //		getVsLoad();
@@ -75,8 +76,12 @@ public class MainClass {
 						
 		//Instantiate a BankUser Mapped to a Table, provide the primary key
 		BankUser user = new BankUser("jen","123", "generator", "values");
-				
+//				
 		dao.createUser(user);
+		
+		BankAccount account = new BankAccount(500, user);
+		dao.createAccount(account);
+		
 		System.out.println("done saving user to db");
 	}
 	
